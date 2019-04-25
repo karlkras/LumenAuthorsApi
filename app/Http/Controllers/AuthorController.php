@@ -1,10 +1,12 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\Traits\ApiResponder;
 use Illuminate\Http\Request;
 
 class AuthorController extends Controller
 {
+    use ApiResponder;
     /**
      * Create a new controller instance.
      *
