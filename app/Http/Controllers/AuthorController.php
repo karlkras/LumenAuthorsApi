@@ -1,8 +1,11 @@
 <?php
 
 namespace App\Http\Controllers;
+
+use App\Author;
 use App\Traits\ApiResponder;
 use Illuminate\Http\Request;
+use Illuminate\Http\Response as Response;
 
 class AuthorController extends Controller
 {
@@ -19,16 +22,16 @@ class AuthorController extends Controller
 
     /**
      * Return the full list of authors
-     * @return Illuminate\Http\Response
+     * @return Response
      */
     public function index() {
-
+        return $this->successResponse(Author::all());
     }
 
     /**
      * Create an author
      * @param Request $request
-     * @return Illuminate\Http\Response
+     * @return Response
      */
     public function store(Request $request) {
 
@@ -37,7 +40,7 @@ class AuthorController extends Controller
     /**
      * Provides details of existing author
      * @param $author
-     * @return Illuminate\Http\Response
+     * @return Response
      */
     public function show($author) {
 
@@ -47,7 +50,7 @@ class AuthorController extends Controller
      * Updates an existing author information
      * @param Request $request
      * @param $author
-     * @return Illuminate\Http\Response
+     * @return Response
      */
     public function update(Request $request, $author) {
 
@@ -56,7 +59,7 @@ class AuthorController extends Controller
     /**
      * Deletes an existing author
      * @param $author
-     * @return Illuminate\Http\Response
+     * @return Response
      */
     public function destroy($author) {
 
